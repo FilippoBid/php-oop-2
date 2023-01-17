@@ -4,13 +4,14 @@
     class product {
         private $id;
         protected $name;
+        protected $price;
         protected $category;
         protected $available = false;
         protected $quantity = 0;
         protected $img = "https://picsum.photos/300";
 
 
-        function __construct($_name,Category $_category,$_available=null,$_quantity=null,$_img=null)
+        function __construct($_name,$_price,$_category,$_available=null,$_quantity=null,$_img=null)
                 
         {
 
@@ -19,6 +20,7 @@
             $this->setAvailable($_available);
             $this->setQuantity($_quantity);
             $this->setImg($_img);
+            $this->setPrice($_price);
             $this->setId();
             
         }
@@ -139,6 +141,24 @@
         private function setId()
         {
                 $this->id = uniqid("N°");
+        }
+
+        /**
+         * Get the value of price
+         */
+        public function getPrice()
+        {
+                return $this->price;
+        }
+
+        /**
+         * Set the value of price
+         */
+        public function setPrice($price)
+        {
+                $this->price = $price;
+
+                return $this;
         }
     }
     

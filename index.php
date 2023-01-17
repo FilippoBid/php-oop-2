@@ -1,3 +1,3 @@
 <?php
-    require_once"./classes/product.php"
+    require_once"./classes/Product.php"
 ?>    

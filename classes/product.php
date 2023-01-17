@@ -1,16 +1,16 @@
 <?php
     /* creo la classe e il construct */
-
+    require_once __DIR__ . "/Category.php";
     class product {
         private $id;
         protected $name;
         protected $category;
-        protected $available;
-        protected $quantity;
-        protected $img;
+        protected $available = false;
+        protected $quantity = 0;
+        protected $img = "https://picsum.photos/300";
 
 
-        function __construct($_name,$_category,$_available,$_quantity,$_img)
+        function __construct($_name,Category $_category,$_available=null,$_quantity=null,$_img=null)
                 
         {
             $this->setName($_name);
@@ -33,7 +33,11 @@
          * Set the value of img
          */
         public function setImg($img)
-        {
+        {   
+            if (is_null($img)) {
+                return;
+            
+            }
                 $this->img = $img;
 
                 return $this;
@@ -51,7 +55,11 @@
          * Set the value of quantity
          */
         public function setQuantity($quantity)
-        {
+        {   
+            if (is_null($quantity)) {
+                return;
+            
+            }
                 $this->quantity = $quantity;
 
                 return $this;
@@ -69,6 +77,11 @@
          * Set the value of available
          */
         public function setAvailable($available)
+        {
+            if (is_null($available)) {
+                return;
+            
+            }
                 $this->available = $available;
 
                 return $this;

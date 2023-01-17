@@ -13,11 +13,13 @@
         function __construct($_name,Category $_category,$_available=null,$_quantity=null,$_img=null)
                 
         {
+
             $this->setName($_name);
             $this->setCategory($_category);
             $this->setAvailable($_available);
             $this->setQuantity($_quantity);
             $this->setImg($_img);
+            $this->setId();
             
         }
 
@@ -134,12 +136,9 @@
         /**
          * Set the value of id
          */
-        public function setId($id)
+        private function setId()
         {
-                $this->id = $id;
-
-                return $this;
+                $this->id = uniqid("N°");
         }
     }
-    
     

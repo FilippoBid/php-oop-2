@@ -1,7 +1,7 @@
 <?php
     /* creo la classe e il construct */
     require_once __DIR__ . "/Category.php";
-    class product {
+    class Product {
         private $id;
         protected $name;
         protected $price;
@@ -11,7 +11,7 @@
         protected $img = "https://picsum.photos/300";
 
 
-        function __construct($_name,$_price,$_category,$_available=null,$_quantity=null,$_img=null)
+        function __construct($_name,$_price,Category $_category,$_available=null,$_quantity=null,$_img=null)
                 
         {
 
